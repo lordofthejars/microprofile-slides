@@ -1,11 +1,11 @@
 {
-  "name": "Jenkins-20",
+  "name": "MicroProfile",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:lordofthejars/jenkins-20.git"
+    "url": "git@github.com:lordofthejars/microprofile-slides.git"
   },
   "scripts": {
     "serve": "gulp serve",
