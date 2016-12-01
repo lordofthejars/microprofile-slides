@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>MicroProfile</title>
+  <link rel="stylesheet" type="text/css" href="build/build.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <body>
+    <article>
+      <section data-bespoke-backdrop="backdrop backdrop--title" class="title undefined">
+      </section>
+      <section>
+        <div class="main-wrap">
+          <div class="leftbar">
+            <h2 style="font-size:2em" class="gothicfont">Alex Soto</h2><br>
+            <h2 style="font-size:1em" class="gothicfont important">Red Hat Engineer</h2>
+            <h2 style="font-size:1em" class="gothicfont">Open Source Advocate</h2>
+            <h2 style="font-size:1em" class="gothicfont important">@alexsotob</h2><img src="images/public.png" style="width:40%">
+          </div>
+          <div class="rightbar"><img src="images/family.jpg" style="width:100%"></div>
+        </div>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--adarise" class="adarise undefined">
+        <h2 class="biggothic gothicfont">Questions</h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img src="images/community.png" class="schemash">
+        <aside role="note">Conversations -> already using JavaEE and none JavaEE -> found project to move forward, common ground</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Sept 2016 Release 1.0</h2>
+        <ul class="lists">
+          <li>JAX-RS</li>
+          <li>CDI</li>
+          <li>JSON-P</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">CDI Example</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">@Informal
+public class InformalGreeting extends Greeting {
+  public String greet(String name) {
+    return "Hi, " + name + "!";
+  }
+}
+</code><code class="bullet bespoke-bullet bespoke-bullet-inactive">public class Printer {
+  @Inject @Informal Greeting greeting;
+}
+</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">JAX-RS Example</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">@Path("/")
+public class GreetingResource {
+
+  @Inject @Informal Greeting greeting;
+  
+  @GET
+  @Path("greeting/{name}")
+  @Produces(MediaType.TEXT_PLAIN)
+  public Response getMessageByUser(@PathParam("name") String name) {
+    return Response.ok(greeting.greet(name)).build();
+  }
+}
+</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">JSON-P Example</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">JsonObject value = new JsonBuilder() 
+ .beginObject() 
+   .add("firstName", "John") 
+   .add("lastName", "Smith") 
+   .add("age", 25)
+ .endObject()
+.build();
+
+</code><code class="bullet bespoke-bullet bespoke-bullet-inactive">String json = "...";
+JsonReader reader = new JsonReader(new StringReader(json));
+JsonValue value = reader.readObject();
+reader.close();
+
+</code><code class="bullet bespoke-bullet bespoke-bullet-inactive">JsonWriter jsonWriter = new JsonWriter(new FileWriter(...));
+JsonObject jsonObject = new JsonBuilder()
+.build();
+jsonWriter.writeObject(jsonObject);
+jsonWriter.close();
+</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--speed" class="speed undefined">
+        <h2 class="gothicfont"><span class='important'>Rapidly iterate</span> and innovate</h2>
+        <aside role="note">3-4 years between EE because not collaboration as much, tries what and not works (2 months), change fast </aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--contract" class="contract undefined">
+        <h2 class="gothicfont">Build <span class='important'>Consensus</span></h2>
+        <aside role="note">Public mailing list, create community, no paper</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--certified" class="certified undefined">
+        <h2 class="gothicfont"><span class='important'>Standardize</span></h2>
+        <aside role="note">Certified to Java EE</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img src="images/time.png" class="schemas">
+        <aside role="note">Start with minimal things (because of you), website,OS Foundation, Non Profit, Legal and technical IT</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--infra" class="infra undefined">
+        <h2 class="gothicfont">Reference Architecture</h2>
+        <aside role="note">Demo No App, Microservice -> MicroserviceS, Use Case approach, conference</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--swarm" class="swarm undefined">
+        <aside role="note"></aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Session Service</h2>
+        <ul class="lists">
+          <li>Session CRUD(Session)</li>
+          <li>List<> search(Session)</li>
+          <li>List<> sessionForSpeaker(Speaker)</li>
+          <li>List<> speakersForSession(Session)</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">WildFly Swarm</h2>
+        <ul class="lists">
+          <li>Jar size ~65mb, startup ~6s, heap usage ~40mb</li>
+          <li>Uber jar with bootstrap layer</li>
+          <li>Fractions, Java EE + WildFly</li>
+          <li>Non-EE(Service Registry, Circtuit-Breaker, Configuration)</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--ibm" class="ibm undefined">
+        <aside role="note"></aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Voting Service</h2>
+        <ul class="lists">
+          <li>Attendee CRUD(Attendee)</li>
+          <li>SessionRating rateSession(SessionRating)</li>
+          <li>SessionRating updateSession(SessionRating)</li>
+          <li>List<> allSessionVotes(SessionId)</li>
+          <li>Double sessionRatingAverage(SessionId)</li>
+          <li>List<> votesByAttendee(Attendee)</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Liberty</h2>
+        <ul class="lists">
+          <li>Jar size ~35mb, startup ~7s, heap usage ~21mb</li>
+          <li>Uber jar with unzip</li>
+          <li>Liberty, Java EE</li>
+          <li>Extras for production</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--payara" class="payara undefined">
+        <aside role="note"></aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Schedule Service</h2>
+        <ul class="lists">
+          <li>Schedule CRUD(Schedule)</li>
+          <li>List<> allForVenue(Venue)</li>
+          <li>List<> activeAtTime(time)</li>
+          <li>List<> allForDay(date)</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Payara</h2>
+        <ul class="lists">
+          <li>Jar size ~33mb, startup ~5s, heap usage ~20mb</li>
+          <li>Uber jar using CLI</li>
+          <li>Glassfish, Java EE</li>
+          <li>Hazelcast cluster CDI</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--tomitribe" class="tomitribe undefined">
+        <aside role="note"></aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Speaker Service</h2>
+        <ul class="lists">
+          <li>Speaker CRUD(Speaker)</li>
+          <li>Set<> search(Speaker)</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Apache TomEE</h2>
+        <ul class="lists">
+          <li>Jar size ~35mb, startup ~3s, heap usage ~75mb</li>
+          <li>Uber jar bootstrap layer</li>
+          <li>It is a Tomcat, Java EE</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h3 class="gothicfont">https://github.com/microprofile/microprofile-conference</h3>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Next features</h2>
+        <ul class="lists">
+          <li>Persistence</li>
+          <li>Security via JWT</li>
+          <li>Standard Configuration</li>
+          <li>OpenAPI/Swagger</li>
+          <li>Service Discovery</li>
+          <li>Caching</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--alexoh" class="alexoh undefined">
+        <h2 class="gothicfont">Where is <span class='important'>My Feature?</span></h2>
+        <aside role="note">w want to include you, 1 thing every 2 months</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h3 class="gothicfont">https://groups.google.com/forum/#!forum/microprofile</h3>
+        <h3 class="gothicfont">https://github.com/microprofile/evolution</h3>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--microprofileweb" class="microprofileweb undefined">
+        <aside role="note"></aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--adathink" class="adathink undefined">
+        <h2 class="gothicfont smallgothic">Let's <span class='important'>wind down</span></h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont smallgothic underline">Conclusions</h2>
+        <ul class="lists">
+          <li>Community is the most important</li>
+          <li>EE and non-EE</li>
+          <li>It is not a split</li>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--swarm" class="swarm undefined">
+        <aside role="note"></aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img src="images/profile.jpg" class="avatar"><br><a href="http://bit.ly/2gLiXEL" style="border:none"><i class="fa fa-slideshare"></i>
+          <h3>http://bit.ly/2gLiXEL</h3><i class="fa fa-envelope"></i>
+          <h3>asotobu@gmail.com</h3></a>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
